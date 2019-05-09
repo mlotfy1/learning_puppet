@@ -1,4 +1,4 @@
-# learning_puppet
+# LEARNING PUPPET
 
 ## Install puppet
 - Install the puppet package:
@@ -45,7 +45,7 @@ and insert the below:
                 remote: 'https://github.com/mlotfy1/learning_puppet.git'
                 basedir: '/etc/puppetlabs/code/environments'
 ```
-- Deploy the configurations
+- Deploy the puppet code
 ```
 r10k deploy environment -p
 ```
