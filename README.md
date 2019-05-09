@@ -27,3 +27,26 @@ source .bash_profile
 gem install r10k
 puppet agent -t
 ```
+
+## Configure r10k to setup a control repo
+- Create yaml file to configure the repo environments
+```
+mkdir /etc/puppetlabs/r10k
+vim /etc/puppetlabs/r10k/r10k.yaml
+```
+and insert the below:
+```
+---
+:cachedir: '/var/cache/r10k'
+
+
+:sources:
+        :my-org:
+                remote: 'https://github.com/mlotfy1/learning_puppet.git'
+                basedir: '/etc/puppetlabs/code/environments'
+```
+- Deploy the configurations
+```
+r10k deploy environment -p
+```
+check the directory `/etc/puppetlabs/code/environments/`
