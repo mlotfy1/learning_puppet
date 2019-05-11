@@ -12,5 +12,5 @@ class profile::agent_nodes {
       detach    => true,
       command   => '/bin/sh -c "while true; do echo hello world; sleep 1; done"',
       hostname  => 'db.puppet.vm',
-  }db
+  }
 }
