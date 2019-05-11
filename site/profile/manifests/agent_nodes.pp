@@ -1,5 +1,5 @@
 class profile::agent_nodes {
-  include dockeragent
-  dockeragent::node {'web.puppet.vm':}
-  dockeragent::node {'db.puppet.vm':}
+  include docker
+  docker::run {'web.puppet.vm':}
+  docker::run {'db.puppet.vm':}
 }
