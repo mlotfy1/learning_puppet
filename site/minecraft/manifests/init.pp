@@ -5,6 +5,7 @@ class minecraft {
   file {'/opt/minecraft/minecraft_server.jar':
     ensure => file,
     source => 'https://launcher.mojang.com/v1/objects/f1a0073671057f01aa843443fef34330281333ce/server.jar',
+    before => 'Service['minecraft'],
   }
   package {'java':
     ensure => present,
@@ -20,5 +21,6 @@ class minecraft {
   service {'minecraft':
     ensure => running,
     enable => true,
+    require=> [Package['java'],File['/opt/minecraft/eula.txt'],File['/etc/systemd/system/minecraft.service']],
   }
 }
